@@ -35,8 +35,8 @@ vex::motor tilt2  = vex::motor( vex::PORT19, false); // right side
 
 vex::controller Controller1 = vex::controller();
 
-vex::gyro Gyro = vex::gyro(Brain.ThreeWirePort.E);
-vex::encoder leftEncoder  = vex::encoder(Brain.ThreeWirePort.C) ;
+vex::gyro Gyro = vex::gyro(Brain.ThreeWirePort.A);
+vex::encoder leftEncoder  = vex::encoder(Brain.ThreeWirePort.E) ;
 vex::encoder rightEncoder = vex::encoder(Brain.ThreeWirePort.G) ;
 vex::bumper Bumper = vex::bumper(Brain.ThreeWirePort.B);
 

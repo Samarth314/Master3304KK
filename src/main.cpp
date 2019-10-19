@@ -195,24 +195,26 @@ void score(){
 //}
 
 void autonomous( void ) {
-  //myBase.turnPID(658.0);
-  //myBase.turnPID(180.0);
+  // myBase.turnPID(658.0);
+  // myBase.turnPID(180.0);
   // myTilter.robotDeploy();
-  //myIntake.Spin(100);
+  // myIntake.Spin(100);
   // myBase.drivePID(100, 100, 2);
   // vexDelay(3000);
   // myBase.drivePID(-100, -10                                                                                                                                                                                                                                                                                    0, 1);
-  //vex::task::sleep(1000);
-  //myIntake.Spin(0);
-  //myBase.drivePID(-46);
+  // vex::task::sleep(1000);
+  // myIntake.Spin(0);
+  // myBase.drivePID(-46);
   // baseGyroReset;
   // while(Gyro.isCalibrating()){vex::task::sleep(1);}
   // supportRedAuton();
   // blueAuton();
-  //redAuton();
-  myBase.drivePID(-50, -50, 1);
-  myBase.drivePID(50, 50, 1); 
-  myTilter.moveFor(-100, 50);           
+  // redAuton();
+  myBase.drivePID(-50, -50, 5);
+  myBase.drivePID(50, 50, 5);
+  myTilter.moveFor(-100, 50);
+  myIntake.Spin(100);
+  myBase.drivePID(-50, -50, 7);         
   // vex::task::sleep(250);
   // myBase.driveInches_Enc(backwards, -30, 80);      
 
@@ -246,6 +248,12 @@ void usercontrol( void ) {
     myBase.userControl();
     myTilter.userControl();
     myIntake.userControl();
+    // if(autoScoreBtn){
+
+
+        
+
+    // }
     if(btnX){
       vex::task::sleep(250);
       myBase.useTrueSpeed = !myBase.useTrueSpeed;

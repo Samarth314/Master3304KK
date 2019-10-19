@@ -109,7 +109,7 @@ void base::moveFor(double degToRotate_Left, double degToRotate_Right, int speed)
 
 void base::userControl(int bufferSize = 10, bool Stop = false){
   if(autoScoreBtn){
-    this->Spin(-30, -30);
+    this->Spin(-15, -15);
   }else{
     if(baseLockBtn){
       vex::task::sleep(200);

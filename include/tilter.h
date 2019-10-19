@@ -4,8 +4,8 @@ enum tiltType {extend, retract};
 
 class tilter{
   private:
-    int inSpeed = 100;
-    int outSpeed = -100;
+    int inSpeed = 200;
+    int outSpeed = -200;
     int slowSpeed = -12;
     void buttonReset();
   public:
@@ -57,7 +57,9 @@ void tilter::userControl(){
   }else if(tiltInBtn){ 
     this->Spin(this->inSpeed);  
   }else if(tiltOutBtn){
-    this->Spin(this->outSpeed);  
+    this->Spin(this->outSpeed);
+  }else if (autoScoreBtn) {
+    this->Spin(60);
   }else{
     if(tilt1.rotation(vex::rotationUnits::deg)<=75){
       this->Stop(1);        
@@ -65,9 +67,7 @@ void tilter::userControl(){
       this->Stop(0);           
     }     
   }
-  if(autoScoreBtn){
-    this->Spin(-60);
-  }
+
   this->buttonReset();
 }
 
@@ -101,7 +101,7 @@ void tilter::autoScoreStack(){
   this->autoScore();
   vex::task::sleep(1000);
 }
-/*
+
 
 
 
@@ -145,12 +145,12 @@ void deployslide(int speed,int distance ) {
   vex::task::sleep(1) ;
   tilt1.stop(vex::brakeType::coast);
   tilt2.stop(vex::brakeType::coast);
-  turnonbase(40,false) ;
+  // turnonbase(40,false) ;
   vex::task::sleep(500) ;
 }
 
 
-*/
+
 
 
 tilter myTilter;

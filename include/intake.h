@@ -39,7 +39,7 @@ void intake::userControl(){
 
 
 
-/*
+
 void outake(int distance ){
   //first reset encoder for outaking.
   rightIntake.resetRotation() ;
@@ -51,7 +51,7 @@ void outake(int distance ){
   leftIntake.stop(vex::brakeType::hold);
    rightIntake.stop(vex::brakeType::hold) ;
 }
-*/
+
 
 
 intake myIntake;
