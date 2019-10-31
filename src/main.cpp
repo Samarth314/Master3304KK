@@ -51,7 +51,7 @@ void pre_auton( void ) {
 
 void autoScore(){
   myBase.Spin(-30, -30);
-  myTilter.Spin(-60);
+  myTilter.Spin(-50);
   myIntake.Spin(-50);
 }
 
@@ -210,11 +210,12 @@ void autonomous( void ) {
   // supportRedAuton();
   // blueAuton();
   // redAuton();
-  myBase.drivePID(-50, -50, 5);
-  myBase.drivePID(50, 50, 5);
-  myTilter.moveFor(-100, 50);
-  myIntake.Spin(100);
-  myBase.drivePID(-50, -50, 7);         
+  // myBase.drivePID(-50, -50, 5);
+  // myBase.drivePID(50, 50, 5);
+  myTilter.moveFor(-100, 70);
+  // myTilter.moveFor(double degToRotate, int speed);
+  // myIntake.Spin(100);
+  // myBase.drivePID(-50, -50, 7);         
   // vex::task::sleep(250);
   // myBase.driveInches_Enc(backwards, -30, 80);      
 

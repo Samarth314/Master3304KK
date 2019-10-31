@@ -31,7 +31,8 @@ void tilter::moveFor(double degToRotate, int speed){
   tilt2.rotateFor(degToRotate,vex::rotationUnits::deg,speed,vex::velocityUnits::pct);
 }
 
-void tilter::Stop(bool type){
+void tilter::
+Stop(bool type){
   if(type){
     tilt1.stop(vex::brakeType::coast);  
     tilt2.stop(vex::brakeType::coast);            
@@ -59,7 +60,7 @@ void tilter::userControl(){
   }else if(tiltOutBtn){
     this->Spin(this->outSpeed);
   }else if (autoScoreBtn) {
-    this->Spin(60);
+    this->Spin(30);
   }else{
     if(tilt1.rotation(vex::rotationUnits::deg)<=75){
       this->Stop(1);        
@@ -141,7 +142,7 @@ void deployslide(int speed,int distance ) {
   tilt2.resetRotation() ;
   tilt1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
   tilt2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  while(!(Bumper.pressing())) 
+  while(!(Bumper.pressing()))
   vex::task::sleep(1) ;
   tilt1.stop(vex::brakeType::coast);
   tilt2.stop(vex::brakeType::coast);
